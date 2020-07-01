@@ -5,7 +5,7 @@ const router = express.Router()
 const mime = require('mime')
 
 router.get('/download', (req, res) => {
-  const staticPath = process.env.NODE_ENV !== 'production' ? 'static' : 'dist'
+  const staticPath = process.env.NODE_ENV !== 'production' ? 'static' : '.nuxt/dist/client'
   const docs = path.resolve(`${staticPath}/img/docs/pdf`)
 
   const file = docs + '/docs-pdf.rar'
