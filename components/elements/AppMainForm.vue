@@ -5,27 +5,27 @@
         <svg-back v-if="currentStep > 0 && !mobile" />
       </div>
       <div class="main-form__group main-form__step" data-step="s0" :class="{active: currentStep === 0 || mobile}">
-        <base-input id="departure" v-model="formData.departure" :placeholder="'Пункт отправления'" required-filed />
+        <base-input :is-clear-form="isClearForm" id="departure" v-model="formData.departure" :placeholder="'Пункт отправления'" required-filed />
         <svg-triangle class="main-form--next" />
-        <base-input id="destination" v-model="formData.destination" :placeholder="'Пункт назначения'" required-filed />
+        <base-input :is-clear-form="isClearForm" id="destination" v-model="formData.destination" :placeholder="'Пункт назначения'" required-filed />
         <svg-triangle class="main-form--next" />
-        <base-input id="nameCargo" v-model="formData.nameCargo" :placeholder="'Наименование груза'" required-filed />
+        <base-input :is-clear-form="isClearForm" id="nameCargo" v-model="formData.nameCargo" :placeholder="'Наименование груза'" required-filed />
       </div>
       <div class="main-form__group main-form__step" data-step="s1" :class="{active: currentStep === 1 || mobile}">
-        <base-input id="lengthCargo" v-model="formData.lengthCargo" :placeholder="'Длина груза, м'" required-filed type="number" />
+        <base-input :is-clear-form="isClearForm" id="lengthCargo" v-model="formData.lengthCargo" :placeholder="'Длина груза, м'" required-filed type="number" />
         <svg-triangle class="main-form--next" />
-        <base-input id="widthCargo" v-model="formData.widthCargo" :placeholder="'Ширина груза, м'" required-filed type="number" />
+        <base-input :is-clear-form="isClearForm" id="widthCargo" v-model="formData.widthCargo" :placeholder="'Ширина груза, м'" required-filed type="number" />
         <svg-triangle class="main-form--next" />
-        <base-input id="heightCargo" v-model="formData.heightCargo" :placeholder="'Высота груза, м'" required-filed type="number" />
+        <base-input :is-clear-form="isClearForm" id="heightCargo" v-model="formData.heightCargo" :placeholder="'Высота груза, м'" required-filed type="number" />
         <svg-triangle class="main-form--next" />
-        <base-input id="weightCargo" v-model="formData.weightCargo" :placeholder="'Вес груза, кг'" required-filed type="number" />
+        <base-input :is-clear-form="isClearForm" id="weightCargo" v-model="formData.weightCargo" :placeholder="'Вес груза, кг'" required-filed type="number" />
       </div>
       <div class="main-form__group main-form__step" data-step="s2" :class="{active: currentStep === 2 || mobile}">
-        <base-input id="nameCustomer" v-model="formData.nameCustomer" :placeholder="'Как к вам обращаться?'" required-filed />
+        <base-input :is-clear-form="isClearForm" id="nameCustomer" v-model="formData.nameCustomer" :placeholder="'Как к вам обращаться?'" required-filed />
         <svg-triangle class="main-form--next" />
-        <base-input id="phone" v-model="formData.phone" :placeholder="'Телефон'" required-filed type="phone" />
+        <base-input :is-clear-form="isClearForm" id="phone" v-model="formData.phone" :placeholder="'Телефон'" required-filed type="phone" />
         <svg-triangle class="main-form--next" />
-        <base-input id="email" v-model="formData.email" :placeholder="'Ваш E-mail'" required-filed type="email" />
+        <base-input :is-clear-form="isClearForm" id="email" v-model="formData.email" :placeholder="'Ваш E-mail'" required-filed type="email" />
       </div>
 
       <button-full class="primary-button main-form__inline" @click.stop="nextStep">
@@ -85,7 +85,8 @@ export default {
       currentStep: 0,
       error: false,
       errText: '',
-      isReady: false
+      isReady: false,
+      isClearForm: false
     }
   },
   mounted () {
@@ -163,10 +164,12 @@ export default {
           formCargo: this.formData
         }).then((result) => {
           this.errText = ''
+          this.isClearForm = true
           Object.keys(this.formData).forEach((item) => {
             this.formData[item] = ''
           })
           this.toggleModal(true)
+          this.isClearForm = false
         }).catch((e) => {
           this.errText = 'Ваш запрос не отправлен!'
           this.toggleModal(true)
