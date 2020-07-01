@@ -1,16 +1,16 @@
 /* eslint-disable new-cap */
 /* eslint-disable no-new-require */
-// const config = require('../conf')
+const config = require('../conf')
 const mysql = new require('mysql')
-// const client = mysql.createPool(config.mysql)
+const client = mysql.createPool(config.mysql)
 // TO DO only for develop computer
-const client = mysql.createPool({
-  host: 'localhost',
-  port: '3306',
-  user: 'root',
-  password: 'root',
-  database: 'cargo'
-})
+// const client = mysql.createPool({
+//   host: 'localhost',
+//   port: '3306',
+//   user: 'root',
+//   password: 'root',
+//   database: 'cargo'
+// })
 const htmlspecialchars = {
   encode: (string) => {
     const mapChars = {

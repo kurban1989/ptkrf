@@ -29,8 +29,9 @@ class Reviews {
     const S = parseInt(start, 10)
     const L = parseInt(limit, 10)
     // const where = query && query.visible && query.visible === 'only' ? ' WHERE visible="1"' : ''
-    // const resDB = await db.getQuery(`SELECT * FROM articles${where} order by id desc limit ${!isNaN(S) ? S : 0}, ${!isNaN(L) ? L : 10};`)
-    const resDB = await db.getQuery(`SELECT * FROM reviews order by id desc limit ${!isNaN(S) ? S : 0}, ${!isNaN(L) ? L : 10};`)
+    const where = ' WHERE visible="1"'
+    const resDB = await db.getQuery(`SELECT * FROM reviews${where} order by id desc limit ${!isNaN(S) ? S : 0}, ${!isNaN(L) ? L : 10};`)
+    // const resDB = await db.getQuery(`SELECT * FROM reviews order by id desc limit ${!isNaN(S) ? S : 0}, ${!isNaN(L) ? L : 10};`)
     return resDB
   }
 
