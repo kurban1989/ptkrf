@@ -159,14 +159,13 @@ export default {
     },
     send () {
       if (!this.error) {
-        Object.keys(this.formData).forEach((item) => {
-          this.formData[item] = ''
-        })
-
         this.$axios.post(`${process.env.baseUrl}/api/sendmail/send`, {
           formCargo: this.formData
         }).then((result) => {
           this.errText = ''
+          Object.keys(this.formData).forEach((item) => {
+            this.formData[item] = ''
+          })
           this.toggleModal(true)
         }).catch((e) => {
           this.errText = 'Ваш запрос не отправлен!'
