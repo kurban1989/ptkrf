@@ -165,10 +165,11 @@ export default {
         }).then((result) => {
           this.errText = ''
           this.isClearForm = true
+          this.toggleModal(true)
+
           Object.keys(this.formData).forEach((item) => {
             this.formData[item] = ''
           })
-          this.toggleModal(true)
           this.isClearForm = false
         }).catch((e) => {
           this.errText = 'Ваш запрос не отправлен!'
