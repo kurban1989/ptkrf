@@ -1,0 +1,128 @@
+@import './cars';
+@import './docs';
+.banner {
+  position: relative;
+  width: 100vw;
+  height: 640px;
+  background-position: bottom center;
+  background-size: cover;
+  background-image: url('/img/wp2105907.webp');
+  align-items: center;
+
+  &--phone {
+    margin-bottom: 35px;
+    align-items: center;
+
+    a {
+      color: #fff;
+      font-size: 22px;
+      line-height: 28px;
+      font-weight: bold;
+      text-decoration: none;
+      font-family: 'Gilroy', sans-serif;
+    }
+
+    svg {
+      width: 35px;
+      height: 35px;
+      margin-right: 17px;
+    }
+  }
+    
+  @media (max-width: 767px) {
+    height: 425px;
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 36px;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(9, 95, 168, 0.5);
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+.main {
+  &--h1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 52px;
+    max-width: 655px;
+    word-break: normal;
+    color: #fff;
+    margin-bottom: 45px;
+    
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 21px;
+    }
+  }
+  &--p {
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 60px;
+    
+    @media (max-width: 767px) {
+      font-size: 15px;
+    }
+  }
+
+  &__arrow-box {
+    width: 115px;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+    top: 0;
+    justify-content: space-between;
+
+    @media (max-width: 1200px) {
+      right: 20px;
+    }
+  }
+}
+.slider {
+  &__btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #F3F3F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #095FA8;
+    transition: color .15s ease-in-out;
+
+    @media (max-width: 767px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    svg {
+      width: 26px;
+      height: 38px;
+      font-size: 32px;
+    }
+
+    &:hover {
+      color: #FF6C6C;
+    }
+    &:active {
+      color: rgba(255, 108, 108, 0.7);
+    }
+
+    &--right svg{
+      transform: rotate(180deg) translate(-1px, -3px) !important;
+    }
+  }
+}

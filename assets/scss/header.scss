@@ -1,0 +1,92 @@
+.header {
+  width: 100vw;
+  padding: 40px 0;
+  background: #fff;
+  z-index: 3;
+
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
+
+  &.scroll {
+    position: fixed;
+    padding: 30px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    width: 220px;
+    height: 62px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('/img/logo.svg');
+
+    &--footer {
+      margin-bottom: 60px;
+      
+      @media (max-width: 767px) {
+        margin-bottom: 38px;
+      }
+    }
+  }
+
+  &__menu {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 630px;
+    color: #000;
+
+    @media (max-width: 1080px) {
+      justify-content: center;
+      width: fit-content;
+    }
+
+    li {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__phone {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+      margin-right: 14px;
+    }
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 19px;
+      font-size: 18px;
+      line-height: 23px;
+      color: #0C1427; 
+    }
+
+    .town {
+      position: absolute;
+      right: 20px;
+      bottom: -26px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000;
+    }
+  }
+}

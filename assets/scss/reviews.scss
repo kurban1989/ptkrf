@@ -1,0 +1,147 @@
+.reviews-page {
+  width: 100vw;
+  padding-top: 135px;
+  padding-bottom: 120px;
+  background: #F8FBFD;
+
+  @media (max-width: 769px) {
+    padding-top: 50px;
+    padding-bottom: 40px;
+
+    .primary-button {
+      padding: 20px 40px;
+    }
+  }
+
+  &--h1 {
+    margin-bottom: 20px;
+
+    @media (max-width: 769px) {
+      font-size: 30px;
+    }
+    @media (max-width: 760px) {
+      font-size: 25px;
+      line-height: 40px;
+    }
+  }
+
+  &__sub-p {
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: 55px;
+    color: #201D33;
+    
+    @media (max-width: 769px) {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 45px;
+    }
+    
+    @media (max-width: 760px) {
+      margin-bottom: 33px;
+    }
+  }
+
+  &__btn-leave {
+    margin-bottom: 50px;
+  }
+
+  &__img-r {
+    width: 330px;
+    height: 230px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__input {
+    border: 1px solid #D4E1F9;
+    background: #fff;
+    margin-bottom: 23px;
+    max-width: 300px;
+
+    &--area {
+      max-width: 100% !important;
+    }
+  }
+
+  &__h3 {
+    max-width: 330px;
+
+    @media (max-width: 767px) {
+      padding-right: 20px;
+    }
+  }
+
+  &__reviews {
+    width: 100%;
+    max-width: 830px;
+    text-align: left;
+    flex-direction: column;
+  }
+
+  &__block {
+    margin-bottom: 40px;
+
+    .head-rev {
+      font-size: 25px;
+      line-height: 33px;
+      color: #201D33;
+
+      @media (max-width: 769px) {
+        font-size: 20px;
+        line-height: 27px;
+      }
+      @media (max-width: 767px) {
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+
+    .time-rev {
+      display: block;
+      font-size: 15px;
+      color: #707070;
+      margin-bottom: 20px;
+
+      @media (max-width: 767px) {
+        font-size: 11px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .text-rev {
+      font-size: 20px;
+      line-height: 28px;
+      color: #201D33;
+      word-break: break-word;
+
+      @media (max-width: 769px) {
+        font-size: 16px;
+        line-height: 28px;
+      }
+      @media (max-width: 767px) {
+        font-size: 15px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+.modal-review {
+  @media (min-width: 768px) {
+    .modal-container {
+      padding-right: 110px;
+    }
+  }
+  .modal-footer {
+    text-align: left;
+  }
+}
+.flex-rev {
+  display: flex;
+  margin: 0 auto;
+}

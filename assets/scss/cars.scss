@@ -1,0 +1,45 @@
+.cars {
+  min-width: 300px;
+  max-width: 410px;
+
+  &--sub-slide {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 315px;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 27px;
+    text-transform: uppercase;
+    margin-top: auto;
+
+    @media (max-width: 1200px) {
+      padding-left: 10px;
+    }
+  }
+
+  &--park {
+    margin-bottom: 120px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__slide {
+    width: 100%;
+    justify-content: space-between;
+
+    @media (max-width: 1200px) {
+      justify-content: center;
+    }
+  }
+}

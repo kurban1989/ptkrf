@@ -1,0 +1,66 @@
+.primary-button {
+  padding: 25px 50px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 21px;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: #FF6C6C;
+  transition: background .2s ease-in-out;
+
+  &:hover {
+    background: #FF5858;
+  }
+  &:active {
+    background: #FF8080;
+  }
+}
+.scroll-head {
+  padding-top: 140px;
+}
+.services p {
+  font-family: $font-base-bold;
+}
+.secondary-link {
+  display: block;
+  font-size: 20px;
+  line-height: 25px;
+  color: #9F9EA7;
+  border-bottom: 1px solid #9F9EA7 !important;
+  text-decoration: none;
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 20px;
+    border-bottom: none !important;
+  }
+
+  &:hover {
+    color: #595A6D;
+    border-bottom: 1px solid #595A6D;
+    text-decoration: none;
+  }
+}
+.desktop {
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+.fade-enter-active, .fade-leave-active {
+  transition-duration: .2s;
+  transition-property: opacity, transform;
+}
+.fade-enter, .fade-leave-to {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.menuup-enter-active, .menuup-leave-active {
+  transition-duration: .25s;
+  transition-property: transform;
+}
+.menuup-enter, .menuup-leave-to {
+  transform: translateY(-100%);
+}

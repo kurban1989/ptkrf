@@ -1,0 +1,232 @@
+@import '~/assets/fonts_mixins/font-source-declaration';
+
+@mixin font-face(
+  $font-family,
+  $file-path,
+  $weight: normal,
+  $style: normal,
+  $asset-pipeline: $asset-pipeline,
+  $file-formats: eot woff woff2 ttf svg) {
+
+  $font-url-prefix: font-url-prefixer($asset-pipeline);
+
+  @font-face {
+    font-family: $font-family;
+    font-style: $style;
+    font-weight: $weight;
+
+    src: font-source-declaration(
+      $font-family,
+      $file-path,
+      $asset-pipeline,
+      $file-formats,
+      $font-url-prefix
+    );
+
+    font-display: swap; /* Задаем поведение браузера на время загрузки */
+  }
+}
+
+$path-base:  '/';
+$path-fonts: '#{$path-base}fonts';
+$font-Gilroy-bold: 'Gilroy', sans-serif;
+$font-Gilroy-light: 'Gilroy Light', sans-serif;
+$font-base:   $font-Gilroy-light;
+$font-base-bold:   $font-Gilroy-bold;
+
+@include font-face('Gilroy', '#{$path-fonts}/Gilroyextrabold', 800, normal, $file-formats: woff2);
+@include font-face('Gilroy Light', '#{$path-fonts}/Gilroylight', 300, normal, $file-formats: woff2);
+@include font-face('Arrrows-Regular', '#{$path-fonts}/Arrrows-Regular', 400, normal, $file-formats: ttf);
+
+@import './header.scss';
+@import './footer.scss';
+@import './modal.scss';
+@import './ui-kit.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-family: $font-base;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+body {
+  font-family: $font-base !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #0C1427;
+}
+
+button {
+  -webkit-appearance: none;
+}
+
+ul, menu {
+  list-style: none;
+}
+
+svg {
+  fill: currentColor;
+  stroke: inherit;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: bold;
+  margin-bottom: 48px;
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+    line-height: 33px;
+    margin-bottom: 30px;
+  }
+}
+
+.relative {
+  position: relative;
+}
+.wrapper {
+  min-width: 320px;
+}
+.no-outline {
+  outline: none;
+}
+
+.flex {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--vert-center {
+    align-items: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 20px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(8,1fr);
+    grid-column-gap: 15px;
+    padding-right: 35px !important;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+.container {
+  max-width: 1290px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+
+  @media (max-width: 1290px) {
+    padding: 0 20px;
+  }
+}
+.details {
+  width: 100vw;
+  background: #2F295D;
+  padding: 60px 0;
+  margin-bottom: 120px;
+  
+  @media (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+}
+.pointer {
+  cursor: pointer;
+}
+.burger {
+  width: 25px;
+  height: 19px;
+  background: none;
+  padding: 0;
+  color: #000;
+  overflow: hidden;
+  outline: none;
+  margin-right: 10px;
+
+  @media (min-width: 1080px) {
+    display: none;
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    display: block;
+    background: currentColor;
+    opacity: 1;
+    pointer-events: none;
+    border-radius: 30px;
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: 8px;
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
+  }
+}
+
+.mobmenu-enter-active, .mobmenu-leave-active {
+  transition-duration: .25s;
+  transition-property: transform;
+}
+.mobmenu-enter, .mobmenu-leave-to {
+  transform: translateY(-100%);
+}
+
+@media (max-width: 768px) {
+  .plate {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+    
+@media (min-width: 767px) {
+  .mobile-only {
+    display: none;
+  }
+}

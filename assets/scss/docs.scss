@@ -1,0 +1,49 @@
+@import '~/assets/scss/mixins';
+
+.docs {
+  background: #E1ECF6;
+  padding: 90px 0;
+  margin-bottom: 130px;
+
+  @media (max-width: 767px) {
+    padding: 24px 0;
+    margin-bottom: 60px;
+  }
+
+  &__header {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin: 0;
+
+      @media (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__images {
+    display: flex;
+    @include hideScroll;
+    width: 100%;
+    height: 242px;
+    position: relative;
+    overflow-y: auto;
+
+    img {
+      width: 190px;
+      height: 100%;
+      object-fit: cover;
+      margin-right: 30px;
+    }
+  }
+}
