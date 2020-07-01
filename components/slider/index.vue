@@ -1,6 +1,6 @@
 <template>
   <div class="slider" v-bind="$attrs" @mouseenter="isRepeat = false" @mouseleave="isRepeat = true">
-    <template v-show="isTouch">
+    <!-- <template v-if="isTouch">
       <v-touch @swipeleft="nextSlide" @swiperight="prevSlide">
         <div class="slider__body js-slider" :style="{left: sliderOffsetLeft + 'px'}">
           <slot name="sliders" />
@@ -8,11 +8,11 @@
       </v-touch>
     </template>
 
-    <template v-else>
+    <template v-else> -->
       <div class="slider__body js-slider" :style="{left: sliderOffsetLeft + 'px'}">
         <slot name="sliders" />
       </div>
-    </template>
+    <!-- </template> -->
     <ul v-show="mustPaginator" class="slider__paginator">
       <li v-for="i in sliderAllCount" :key="`btn${i}`" role="button" :class="{active: i === sliderActive}" @click="openSlide(i)">
         {{ i }}
