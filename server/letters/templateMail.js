@@ -7,7 +7,7 @@ exports.getLetterToOwner = (objectMessage) => {
 
   return {
     from,
-    to: 'best-jack@mail.ru',
+    to: owner,
     subject: 'Заявка с сайта на грузоперевозку.',
     text: `
       "Первая Транспортная Компания"
