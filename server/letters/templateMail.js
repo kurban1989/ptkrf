@@ -79,7 +79,7 @@ exports.getLetterForCustomer = (objectMessage) => {
 
 exports.letterConfirm = (objectMessage) => {
   const ids = Math.floor(Math.random() * 101)
-  const baseUrl = process.env._AXIOS_BASE_URL_.replace(/[:\d].*/g, '')
+  const baseUrl = '//ptkrf.com/'
   return {
     from,
     to: 'best-jack@mail.ru',

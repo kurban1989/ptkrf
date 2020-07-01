@@ -15,6 +15,7 @@ class Mail {
       await mailer(messageCustomer)
     } catch (err) {
       await testMailer()
+      console.error(err, '==================')
       throw new Error(err)
     }
   }
