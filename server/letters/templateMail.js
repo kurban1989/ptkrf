@@ -82,7 +82,8 @@ exports.letterConfirm = (objectMessage) => {
   const baseUrl = '//ptkrf.com/'
   return {
     from,
-    to: 'best-jack@mail.ru',
+    // to: 'best-jack@mail.ru',
+    to: owner,
     subject: 'Подтверждение (модерация) добавления отзыва на сайте.',
     html: `<p>
       <strong>"Первая Транспортная Компания"</strong>

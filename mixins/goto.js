@@ -13,13 +13,13 @@ export default {
           timer = setTimeout(() => {
             this.scrollToEl(item.link)
             clearTimeout(timer)
-          }, 310)
+          }, 300)
         }
       }
     },
     scrollToEl (el) {
       el = document.querySelector(`.${el.substring(1, el.length)}`)
-      const caf = 2
+      const caf = 3.2
       const top = Number(window.scrollY) + Number(el.getBoundingClientRect().y) - Number(el.scrollHeight / caf)
       // Перемотка до карточки события
       window.scrollTo({

@@ -5,34 +5,98 @@
         <svg-back v-if="currentStep > 0 && !mobile" />
       </div>
       <div class="main-form__group main-form__step" data-step="s0" :class="{active: currentStep === 0 || mobile}">
-        <base-input :is-clear-form="isClearForm" id="departure" v-model="formData.departure" :placeholder="'Пункт отправления'" required-filed />
+        <base-input
+          id="departure"
+          v-model="formData.departure"
+          :is-clear-form="isClearForm"
+          :placeholder="'Пункт отправления'"
+          required-filed
+        />
         <svg-triangle class="main-form--next" />
-        <base-input :is-clear-form="isClearForm" id="destination" v-model="formData.destination" :placeholder="'Пункт назначения'" required-filed />
+        <base-input
+          id="destination"
+          v-model="formData.destination"
+          :is-clear-form="isClearForm"
+          :placeholder="'Пункт назначения'"
+          required-filed
+        />
         <svg-triangle class="main-form--next" />
-        <base-input :is-clear-form="isClearForm" id="nameCargo" v-model="formData.nameCargo" :placeholder="'Наименование груза'" required-filed />
+        <base-input
+          id="nameCargo"
+          v-model="formData.nameCargo"
+          :is-clear-form="isClearForm"
+          :placeholder="'Наименование груза'"
+          required-filed
+        />
       </div>
       <div class="main-form__group main-form__step" data-step="s1" :class="{active: currentStep === 1 || mobile}">
-        <base-input :is-clear-form="isClearForm" id="lengthCargo" v-model="formData.lengthCargo" :placeholder="'Длина груза, м'" required-filed type="number" />
+        <base-input
+          id="lengthCargo"
+          v-model="formData.lengthCargo"
+          :is-clear-form="isClearForm"
+          :placeholder="'Длина груза, м'"
+          required-filed
+          type="number"
+        />
         <svg-triangle class="main-form--next" />
-        <base-input :is-clear-form="isClearForm" id="widthCargo" v-model="formData.widthCargo" :placeholder="'Ширина груза, м'" required-filed type="number" />
+        <base-input
+          id="widthCargo"
+          v-model="formData.widthCargo"
+          :is-clear-form="isClearForm"
+          :placeholder="'Ширина груза, м'"
+          required-filed
+          type="number"
+        />
         <svg-triangle class="main-form--next" />
-        <base-input :is-clear-form="isClearForm" id="heightCargo" v-model="formData.heightCargo" :placeholder="'Высота груза, м'" required-filed type="number" />
+        <base-input
+          id="heightCargo"
+          v-model="formData.heightCargo"
+          :is-clear-form="isClearForm"
+          :placeholder="'Высота груза, м'"
+          required-filed
+          type="number"
+        />
         <svg-triangle class="main-form--next" />
-        <base-input :is-clear-form="isClearForm" id="weightCargo" v-model="formData.weightCargo" :placeholder="'Вес груза, кг'" required-filed type="number" />
+        <base-input
+          id="weightCargo"
+          v-model="formData.weightCargo"
+          :is-clear-form="isClearForm"
+          :placeholder="'Вес груза, кг'"
+          required-filed
+          type="number"
+        />
       </div>
       <div class="main-form__group main-form__step" data-step="s2" :class="{active: currentStep === 2 || mobile}">
-        <base-input :is-clear-form="isClearForm" id="nameCustomer" v-model="formData.nameCustomer" :placeholder="'Как к вам обращаться?'" required-filed />
+        <base-input
+          id="nameCustomer"
+          v-model="formData.nameCustomer"
+          :is-clear-form="isClearForm"
+          :placeholder="'Как к вам обращаться?'"
+          required-filed
+        />
         <svg-triangle class="main-form--next" />
-        <base-input :is-clear-form="isClearForm" id="phone" v-model="formData.phone" :placeholder="'Телефон'" required-filed type="phone" />
+        <base-input
+          id="phone"
+          v-model="formData.phone"
+          :is-clear-form="isClearForm"
+          :placeholder="'Телефон'"
+          required-filed
+          type="phone"
+        />
         <svg-triangle class="main-form--next" />
-        <base-input :is-clear-form="isClearForm" id="email" v-model="formData.email" :placeholder="'Ваш E-mail'" required-filed type="email" />
+        <base-input
+          id="email"
+          v-model="formData.email"
+          :is-clear-form="isClearForm"
+          :placeholder="'Ваш E-mail'"
+          required-filed
+          type="email"
+        />
       </div>
-
       <button-full class="primary-button main-form__inline" @click.stop="nextStep">
         {{ submitText }}
       </button-full>
     </form>
-
     <portal to="modal-zone">
       <base-modal @close="toggleModal(false)">
         <h3 v-if="errText.length" slot="header">
@@ -46,7 +110,6 @@
             {{ `Спасибо, ${formData.nameCustomer}! Ваша заявка принята.` }}
           </p>
         </template>
-
         <button-full slot="footer" class="primary-button" @click="toggleModal(false)">
           ОК
         </button-full>
@@ -54,7 +117,6 @@
     </portal>
   </div>
 </template>
-
 <script>
 import { isClient } from '~/helpers'
 export default {
@@ -115,13 +177,10 @@ export default {
       if (this.isNotInputFill()) {
         return
       }
-
       this.isReady && this.send()
-
       if (steps.length - 1 > this.currentStep) {
         this.currentStep++
       }
-
       if (this.currentStep === 2) {
         this.isReady = true
         this.submitText = 'Отправить'
@@ -138,13 +197,11 @@ export default {
       const parent = this.$el.querySelector('#request')
       let blockForm = null
       let isError = false
-
       if (!this.mobile) {
         blockForm = parent.querySelectorAll(`.main-form__step[data-step="s${this.currentStep}"] div[id]`)
       } else {
         blockForm = parent.querySelectorAll('.main-form__step div[id]')
       };
-
       [].forEach.call(blockForm, (element) => {
         // console.log(this.formData[element.getAttribute('id')], element.getAttribute('id'))
         if (this.formData[element.getAttribute('id')] === '') {
@@ -154,7 +211,6 @@ export default {
           element.classList.remove('error')
         }
       })
-
       this.error = isError
       return isError
     },
@@ -164,13 +220,16 @@ export default {
           formCargo: this.formData
         }).then((result) => {
           this.errText = ''
-          this.isClearForm = true
+          this.$nextTick(() => {
+            this.isClearForm = true
+          })
           this.toggleModal(true)
-
           Object.keys(this.formData).forEach((item) => {
             this.formData[item] = ''
           })
-          this.isClearForm = false
+          this.$nextTick(() => {
+            this.isClearForm = false
+          })
         }).catch((e) => {
           this.errText = 'Ваш запрос не отправлен!'
           this.toggleModal(true)
@@ -193,20 +252,17 @@ export default {
   overflow: hidden;
   flex-wrap: wrap;
   margin-bottom: 95px;
-
   @media (max-width: 1200px) {
     width: 70vw;
     flex-direction: column;
     background: #fff;
     padding: 40px 70px;
   }
-
   @media (max-width: 767px) {
     width: 100%;
     padding: 30px 24px;
     margin-bottom: 40px;
   }
-
   &__group {
     align-items: center;
     background-color: #fff;
@@ -214,7 +270,6 @@ export default {
     padding-right: 30px;
     display: inline-flex;
     margin-right: 10px;
-
     @media (max-width: 1200px) {
       width: 100%;
       display: flex;
@@ -222,12 +277,10 @@ export default {
       margin: 0;
       padding: 0;
     }
-
     .input-wrap {
       width: 205px !important;
       display: inline-block;
       margin-right: 20px;
-
       @media (max-width: 1200px) {
         width: 100% !important;
         margin-right: 0;
@@ -235,17 +288,14 @@ export default {
       }
     }
   }
-
   &__inline {
     display: inline-flex;
-
     @media (max-width: 1200px) {
       width: 100%;
       justify-content: center;
       margin-top: 20px;
     }
   }
-
   &__step {
     transition: all .4s ease-in-out;
     position: absolute;
@@ -254,7 +304,6 @@ export default {
     left: 0;
     opacity: 0;
     z-index: 0;
-
     &.active {
       top: 0;
       opacity: 1;
@@ -262,15 +311,12 @@ export default {
       pointer-events: all;
     }
   }
-
   &--next {
     margin-right: 20px;
-
     @media (max-width: 1200px) {
       display: none;
     }
   }
-
   &--back {
     display: flex;
     justify-content: center;
