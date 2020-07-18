@@ -130,6 +130,13 @@
       }
     }
   }
+
+  &--small-pad {
+    padding: 60px 0;
+    @media (max-width: 769px) {
+      padding: 22px 0;
+    }
+  }
 }
 .modal-review {
   @media (min-width: 768px) {

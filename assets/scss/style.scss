@@ -127,6 +127,10 @@ h2 {
   &--vert-center {
     align-items: center;
   }
+
+  &.justify-between {
+    justify-content: space-between;
+  }
 }
 
 .grid {
@@ -202,6 +206,30 @@ h2 {
 
     &:last-child {
       bottom: 0;
+    }
+  }
+}
+
+.second-title {
+  font-size: 23px;
+  margin-bottom: 0.7em;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0.42em;
+  }
+
+  &+span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 0.4em;
+
+    @media (max-width: 768px) {
+      margin-bottom: 1.5em;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
     }
   }
 }

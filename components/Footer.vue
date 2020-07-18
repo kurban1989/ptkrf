@@ -6,7 +6,7 @@
           <nuxt-link to="/" class="header__logo header__logo--footer" />
 
           <p class="footer__recvizite">
-            ООО «Первая транспортная компания»
+            ООО «Первая Транспортная Компания»
           </p>
           <p class="footer__recvizite plate">
 &nbsp;
@@ -40,7 +40,7 @@
         </div>
         <div class="flex flex--column footer__middle">
           <b class="plate">
-            ООО «Первая транспортная компания»
+            ООО «Первая Транспортная Компания»
           </b>
 
           <ul>
@@ -61,13 +61,13 @@
 
           <div class="flex footer__messengers">
             <span>
-              <a href="tg://resolve?phone=+79879168063">Telegram</a>
+              <a href="tg://resolve?phone=+79879168066">Telegram</a>
             </span>
             <span>
               <a href="viber://chat?number=+79879168066">Viber</a>
             </span>
             <span>
-              <a href="whatsapp://send?phone=+79879168063">WhatsApp</a>
+              <a href="whatsapp://send?phone=+79879168066">WhatsApp</a>
             </span>
           </div>
 

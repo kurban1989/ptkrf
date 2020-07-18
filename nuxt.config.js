@@ -11,11 +11,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Первая транспортная компания',
+    title: 'Первая Транспортная Компания',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Первая транспортная компания. Профессиональная организация грузоперевозок' }
+      { hid: 'description', name: 'description', content: 'Первая Транспортная Компания. Профессиональная организация грузоперевозок' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -42,6 +42,7 @@ module.exports = {
       src: '~/plugins/hummer',
       ssr: false
     },
+    { src: '~/plugins/yandexMaps', mode: 'client' },
     { src: '~/plugins/VScrollLock', mode: 'client' },
     '~/plugins/portal'
   ],

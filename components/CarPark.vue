@@ -99,6 +99,9 @@ export default {
     },
     prev () {
       this.$refs.slider.nextSlide()
+    },
+    toggleModal (bool) {
+      this.$store.dispatch('modals/toggleModal', bool)
     }
   }
 }

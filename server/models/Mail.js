@@ -15,7 +15,8 @@ class Mail {
       await mailer(messageCustomer)
     } catch (err) {
       await testMailer()
-      console.error(err, '================')
+      // eslint-disable-next-line no-console
+      console.error(err, '====== Err Mail =======')
       throw new Error(err)
     }
   }
