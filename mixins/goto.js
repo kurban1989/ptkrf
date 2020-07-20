@@ -9,19 +9,20 @@ export default {
         if (this.$route.fullPath === '/') {
           this.scrollToEl(item.link)
         } else {
-          this.$router.push({ path: '/' })
           timer = setTimeout(() => {
             this.scrollToEl(item.link)
             clearTimeout(timer)
-          }, 300)
+          }, 310)
+
+          this.$router.push({ path: '/' })
         }
       }
     },
     scrollToEl (el) {
       el = document.querySelector(`.${el.substring(1, el.length)}`)
-      const caf = 3.2
+      const caf = 3.3
       const top = Number(window.scrollY) + Number(el.getBoundingClientRect().y) - Number(el.scrollHeight / caf)
-      // Перемотка до карточки события
+
       window.scrollTo({
         top,
         behavior: 'smooth'

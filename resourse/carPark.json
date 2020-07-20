@@ -1,18 +1,22 @@
 [
   {
-    "img": "/img/IMG-50385b0fb93107cc4f77e7c1e7a20fd9-V.jpg",
+    "img": "/img/sdv2.jpg",
+    "title": "Газель тентовая"
+  },
+  {
+    "img": "/img/1200x900.webp",
+    "title": "Газон Next"
+  },
+  {
+    "img": "/img/original_7a77.jpg",
+    "title": "KAMAZ тралл"
+  },
+  {
+    "img": "/img/8f130b5s-1920.jpg",
+    "title": "VOLVO FH 460"
+  },
+  {
+    "img": "/img/s1200.jpg",
     "title": "Freightliner Columbia"
-  },
-  {
-    "img": "/img/IMG-20191203-WA0008.jpg",
-    "title": "volvo fh 460"
-  },
-  {
-    "img": "/img/IMG-20200319-WA0004.jpg",
-    "title": "КАМАЗ 43118"
-  },
-  {
-    "img": "/img/6226271613.jpg",
-    "title": "ZIL"
   }
 ]

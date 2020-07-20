@@ -16,17 +16,20 @@
           v-for="(subCarArray, index) in autoPark"
           :key="index"
           class="flex cars__slide"
+          :class="{'align-left': Array.isArray(subCarArray) && subCarArray.length < 3 && size === 3}"
         >
-          <div
-            v-for="car in subCarArray"
-            :key="car.title"
-            class="cars cars--sub-slide"
-          >
-            <img :src="car.img" :alt="car.title" class="cars__img">
-            <p class="cars__title">
-              {{ car.title }}
-            </p>
-          </div>
+          <template v-if="Array.isArray(subCarArray) && subCarArray.length">
+            <div
+              v-for="car in subCarArray"
+              :key="car.title"
+              class="cars cars--sub-slide"
+            >
+              <img :src="car.img" :alt="car.title" class="cars__img">
+              <p class="cars__title">
+                {{ car.title }}
+              </p>
+            </div>
+          </template>
         </div>
       </template>
     </app-slider>
@@ -106,3 +109,12 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.align-left {
+  justify-content: flex-start !important;
+
+  .cars--sub-slide {
+    margin-right: 2rem;
+  }
+}
+</style>

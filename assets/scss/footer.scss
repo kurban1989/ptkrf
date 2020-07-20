@@ -51,9 +51,6 @@ footer {
     }
 
     ul {
-      font-size: 16px;
-      line-height: 25px;
-      color: $color-items;
       column-count: 2;
       list-style-position: inside;
 
@@ -65,6 +62,9 @@ footer {
 
       li {
         margin-bottom: 22px;
+        font-size: 16px;
+        line-height: 25px;
+        color: $color-items;
 
         @media (max-width: 767px) {
           margin-bottom: 18px !important;
@@ -77,6 +77,15 @@ footer {
         &:last-child {
           margin-bottom: 0;
         }
+      }
+
+      .button-full {
+        font-family: $font-base;
+        background: transparent;
+        font-size: 16px;
+        line-height: 25px;
+        color: $color-items;
+        text-decoration: none;
       }
     }
 

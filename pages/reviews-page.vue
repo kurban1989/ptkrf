@@ -29,6 +29,9 @@
           </p>
         </li>
       </ul>
+      <h3 v-else class="second-title">
+        Отзывов пока нет, оставьте свой отзыв, будьте первым!
+      </h3>
     </div>
 
     <portal to="modal-zone">

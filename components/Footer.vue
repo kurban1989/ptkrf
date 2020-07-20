@@ -45,13 +45,18 @@
 
           <ul>
             <template v-for="(item, index) in mainMenu">
-              <li :key="index" :title="item.hint" role="button" @click="goToBlock(item)">
-                {{ item.title }}
+              <li :key="index" :title="item.hint">
+                <button-full
+                  :link="item.link.startsWith('/') ? item.link : null"
+                  @click="goToBlock(item)"
+                >
+                  {{ item.title }}
+                </button-full>
               </li>
             </template>
-            <li @click="goToBlock({ link: '#stocks'})">
+            <!-- <li @click="goToBlock({ link: '#stocks'})">
               Акции
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="flex flex--column footer__right">
@@ -83,12 +88,14 @@
 import { isClient } from '~/helpers'
 import mainMenu from '~/resourse/mainMenu.json'
 import FooterBottomSection from '@/components/FooterBottomSection.vue'
+import ButtonFull from '@/components/elements/ButtonFull.vue'
 import goto from '~/mixins/goto.js'
 
 export default {
   name: 'FooterSite',
   components: {
-    FooterBottomSection
+    FooterBottomSection,
+    ButtonFull
   },
   mixins: [goto],
   data () {
