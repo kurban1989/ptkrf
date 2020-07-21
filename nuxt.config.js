@@ -43,6 +43,7 @@ module.exports = {
       ssr: false
     },
     { src: '~/plugins/yandexMaps', mode: 'client' },
+    { src: '~/plugins/metrika', mode: 'client' },
     { src: '~/plugins/VScrollLock', mode: 'client' },
     '~/plugins/portal'
   ],

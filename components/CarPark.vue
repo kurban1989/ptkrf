@@ -23,6 +23,7 @@
               v-for="car in subCarArray"
               :key="car.title"
               class="cars cars--sub-slide"
+              @click.stop.prevent="callModal(car)"
             >
               <img :src="car.img" :alt="car.title" class="cars__img">
               <p class="cars__title">
@@ -33,6 +34,39 @@
         </div>
       </template>
     </app-slider>
+
+    <portal to="modal-zone-second">
+      <base-modal class="modal-review" @close="toggleModal(false)">
+        <h3 slot="header">
+          {{ titleCar }}
+        </h3>
+        <template #body>
+          <img :src="imgCar" :alt="titleCar" class="cars__img cars__img--modal">
+          <ul class="cat-features">
+            <li>
+              Длина внутренняя:&nbsp;<b>
+                {{ descr.length }}
+              </b>
+            </li>
+            <li>
+              Ширина внутренняя:&nbsp;<b>
+                {{ descr.width }}
+              </b>
+            </li>
+            <li>
+              Высота внутренняя:&nbsp;<b>
+                {{ descr.height }}
+              </b>
+            </li>
+            <li>
+              Грузоподъемность:&nbsp;<b>
+                {{ descr.weight }}
+              </b>
+            </li>
+          </ul>
+        </template>
+      </base-modal>
+    </portal>
   </div>
 </template>
 
@@ -45,11 +79,15 @@ export default {
   components: {
     ButtonFull: () => import('~/components/elements/ButtonFull.vue'),
     SvgArrow: () => import('~/components/svg/SvgArrow.vue'),
+    BaseModal: () => import('~/components/elements/modals/BaseModal.vue'),
     AppSlider: () => import('~/components/slider')
   },
   data () {
     return {
       mobile: false,
+      titleCar: '',
+      imgCar: '',
+      descr: '',
       carPark
     }
   },
@@ -104,7 +142,13 @@ export default {
       this.$refs.slider.nextSlide()
     },
     toggleModal (bool) {
-      this.$store.dispatch('modals/toggleModal', bool)
+      this.$store.dispatch('modals/toggleModalCar', bool)
+    },
+    callModal (car) {
+      this.titleCar = car.title
+      this.imgCar = car.img
+      this.descr = car.description
+      this.toggleModal(true)
     }
   }
 }
@@ -115,6 +159,16 @@ export default {
 
   .cars--sub-slide {
     margin-right: 2rem;
+  }
+}
+.cat-features {
+  max-width: 600px;
+  columns: 2;
+  column-gap: 20px;
+  column-fill: balance;
+
+  @media (max-width: 767px) {
+    columns: 1;
   }
 }
 </style>

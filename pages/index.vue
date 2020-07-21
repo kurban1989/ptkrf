@@ -20,7 +20,7 @@
       </section>
     </div>
     <details-cargo />
-    <stocks />
+    <!-- <stocks /> -->
     <car-park />
     <app-docs />
     <app-reviews />
@@ -38,7 +38,7 @@ export default {
     SvgPhoneCircle,
     DetailsCargo: () => import('~/components/Details.vue'),
     ButtonFull: () => import('~/components/elements/ButtonFull.vue'),
-    Stocks: () => import('~/components/Stocks.vue'),
+    // Stocks: () => import('~/components/Stocks.vue'),
     AppDocs: () => import('~/components/AppDocs.vue'),
     AppReviews: () => import('~/components/AppReviews.vue'),
     CarPark: () => import('~/components/CarPark.vue'),

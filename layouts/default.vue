@@ -7,6 +7,10 @@
     <transition name="modal">
       <PortalTarget v-show="active" name="modal-zone" />
     </transition>
+
+    <transition name="modal">
+      <PortalTarget v-show="activeCar" name="modal-zone-second" />
+    </transition>
   </div>
 </template>
 
@@ -34,7 +38,8 @@ export default {
   },
   computed: {
     ...mapState({
-      active: state => state.modals.active
+      active: state => state.modals.active,
+      activeCar: state => state.modals.activeCar
     })
   },
   mounted () {
