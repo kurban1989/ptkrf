@@ -1,35 +1,5 @@
 [
   {
-    "img": "/img/sdv2.jpg",
-    "title": "Газель тентовая",
-    "description": {
-      "width": "1,9 м",
-      "weight": "1500 кг",
-      "height": "2 м",
-      "length": "3 м"
-    }
-  },
-  {
-    "img": "/img/1200x900.webp",
-    "title": "Газон Next",
-    "description": {
-      "width": "2,55 м",
-      "weight": "4700 кг",
-      "height": "2,75 м",
-      "length": "7,2 м"
-    }
-  },
-  {
-    "img": "/img/original_7a77.jpg",
-    "title": "KAMAZ тралл",
-    "description": {
-      "width": "2,55 м",
-      "weight": "11 т",
-      "height": "3 м",
-      "length": "20 м"
-    }
-  },
-  {
     "img": "/img/8f130b5s-1920.jpg",
     "title": "VOLVO FH 460",
     "description": {
@@ -47,6 +17,36 @@
       "weight": "20 т",
       "height": "3 м",
       "length": "15 м"
+    }
+  },
+  {
+    "img": "/img/original_7a77.jpg",
+    "title": "KAMAZ тралл",
+    "description": {
+      "width": "2,55 м",
+      "weight": "11 т",
+      "height": "3 м",
+      "length": "20 м"
+    }
+  },
+  {
+    "img": "/img/1200x900.webp",
+    "title": "Газон Next",
+    "description": {
+      "width": "2,55 м",
+      "weight": "4700 кг",
+      "height": "2,75 м",
+      "length": "7,2 м"
+    }
+  },
+  {
+    "img": "/img/sdv2.jpg",
+    "title": "Газель тентовая",
+    "description": {
+      "width": "1,9 м",
+      "weight": "1500 кг",
+      "height": "2 м",
+      "length": "3 м"
     }
   }
 ]

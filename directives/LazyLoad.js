@@ -2,7 +2,7 @@ export default {
   inserted: (el) => {
     const preloadImage = (element) => {
       if (element.dataset && element.dataset.srcset) {
-        element.srcset = element.dataset.srcset
+        element.src = element.dataset.srcset
       }
     }
 

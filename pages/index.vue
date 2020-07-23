@@ -34,6 +34,7 @@ import goto from '~/mixins/goto.js'
 
 export default {
   name: 'Index',
+  scrollToTop: true,
   components: {
     SvgPhoneCircle,
     DetailsCargo: () => import('~/components/Details.vue'),

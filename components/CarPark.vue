@@ -25,7 +25,7 @@
               class="cars cars--sub-slide"
               @click.stop.prevent="callModal(car)"
             >
-              <img :src="car.img" :alt="car.title" class="cars__img">
+              <img v-lazy-load :data-srcset="car.img" :alt="car.title" class="cars__img">
               <p class="cars__title">
                 {{ car.title }}
               </p>
@@ -41,7 +41,7 @@
           {{ titleCar }}
         </h3>
         <template #body>
-          <img :src="imgCar" :alt="titleCar" class="cars__img cars__img--modal">
+          <img v-lazy-load :data-srcset="imgCar" :alt="titleCar" class="cars__img cars__img--modal">
           <ul class="cat-features">
             <li>
               Длина внутренняя:&nbsp;<b>
@@ -72,10 +72,14 @@
 
 <script>
 import carPark from '~/resourse/carPark.json'
+import LazyLoad from '~/directives/LazyLoad.js'
 import { isClient } from '~/helpers'
 
 export default {
   name: 'CarPark',
+  directives: {
+    LazyLoad
+  },
   components: {
     ButtonFull: () => import('~/components/elements/ButtonFull.vue'),
     SvgArrow: () => import('~/components/svg/SvgArrow.vue'),
